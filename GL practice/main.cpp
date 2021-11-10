@@ -68,7 +68,11 @@ void init()
 	cnt = addPoint(points, pos_data, color_data, weight, 0, 20);
 	GLfloat* pos_buffer_data = new GLfloat[cnt];
 	GLfloat* color_buffer_data = new GLfloat[cnt];
-	cout << cnt << endl;
+
+	mat2 mat = mat2(1.f, 2.f, 3.f, 4.f);
+	mat = mat + mat2(4.f, 3.f, 2.f, 1.f);
+	cout << mat[0][0] << " " << mat[0][1] << endl;
+	cout << mat[1][0] << " " << mat[1][1] << endl;
 
 	for (int i = 0; i < cnt; i++)
 	{
