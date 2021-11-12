@@ -1,42 +1,41 @@
 #pragma once
-template<typename T = float>
-class Vector2;
+#include "Vector.h"
 
-template<typename T = float>
-class Matrix2
+typedef class Matrix2
 {
+	friend Vector2 operator*(const Matrix2&, const Vector2&);
+	friend Vector2 operator*(const Vector2&, const Matrix2&);
+
 private:
-	T data[2][2];
+	float data_11, data_12, data_21, data_22;
 
 public:
 	// 생성자
-	Matrix2<T>(T, T, T, T);
-	Matrix2<T>(Vector2<T>, Vector2<T>);
+	Matrix2();
+	Matrix2(float, float, float, float);
+	Matrix2(const Vector2&, const Vector2&);
 
 	// 행렬-행렬 연산
-	Matrix2<T> operator+(Matrix2<T>);
-	Matrix2<T> operator-(Matrix2<T>);
-	Matrix2<T> operator*(Matrix2<T>);
-
-	// 행렬-벡터 연산
-	Vector2<T> operator*(Vector2<T>);
+	Matrix2 operator+(const Matrix2&) const;
+	Matrix2 operator-(const Matrix2&) const;
+	Matrix2 operator*(const Matrix2&) const;
+	Matrix2 operator+=(const Matrix2&);
+	Matrix2 operator-=(const Matrix2&);
+	Matrix2 operator*=(const Matrix2&);
+	bool operator==(const Matrix2&) const;
+	bool operator!=(const Matrix2&) const;
 
 	// 행렬-스칼라 연산
-	Matrix2<T> operator*(T);
-
-	//// 행렬-행렬 대입 연산
-	//Matrix2<T> operator+=(Matrix2<T>);
-	//Matrix2<T> operator-=(Matrix2<T>);
-	//Matrix2<T> operator*=(Matrix2<T>);
-
-	//// 행렬-벡터 대입 연산
-	//Matrix2<T> operator*=(Vector2<T>);
-
-	//// 행렬-스칼라 대입 연산
-	//Matrix2<T> operator*=(T);
+	Matrix2 operator*(const float&) const;
+	Matrix2 operator/(const float&) const;
+	Matrix2 operator*=(const float&);
+	Matrix2 operator/=(const float&);
 
 	// 단항 연산
-	T* operator[](int);
-};
+	float& operator()(const int&, const int&); // 인덱스
+	Matrix2 operator~() const; // 전치 행렬
+} mat2;
 
-typedef Matrix2<float> mat2;
+// 행렬-벡터 연산 (2차원)
+Vector2 operator*(const Matrix2&, const Vector2&);
+Vector2 operator*(const Vector2&, const Matrix2&);

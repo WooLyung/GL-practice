@@ -142,9 +142,9 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GLUTWindow.cpp" />
-    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="Matrix2.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
-    <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GLUTWindow.h" />

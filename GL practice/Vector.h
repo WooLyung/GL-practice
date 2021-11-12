@@ -1,14 +1,26 @@
 #pragma once
 
-template<typename T = float>
-class Vector2
+typedef class Vector2
 {
 public:
-	// 프로퍼티
-	T x, y;
-	
-	// 생성자
-	Vector2(T, T);
-};
+	float x, y;
 
-typedef Vector2<float> vec2;
+	// 생성자
+	Vector2();
+	Vector2(float, float);
+
+	// 벡터-벡터 연산
+	Vector2 operator+(const Vector2&) const;
+	Vector2 operator-(const Vector2&) const;
+	Vector2 operator+=(const Vector2&);
+	Vector2 operator-=(const Vector2&);
+	float operator*(const Vector2&) const;
+	bool operator==(const Vector2&) const;
+	bool operator!=(const Vector2&) const;
+
+	// 벡터-스칼라 연산
+	Vector2 operator*(const float&) const;
+	Vector2 operator/(const float&) const;
+	Vector2 operator*=(const float&);
+	Vector2 operator/=(const float&);
+} vec2;

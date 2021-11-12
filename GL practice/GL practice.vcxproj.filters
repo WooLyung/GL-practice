@@ -26,7 +26,7 @@
       <UniqueIdentifier>{2903b67c-2481-47da-9897-5582d8d6f87a}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\Math\Vector">
-      <UniqueIdentifier>{cbb7140b-2fa9-4dce-8b0f-c8686c5edd3a}</UniqueIdentifier>
+      <UniqueIdentifier>{c33b10ea-18c6-469e-9699-23782494e8f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,10 +39,10 @@
     <ClCompile Include="ShaderProgram.cpp">
       <Filter>소스 파일\ShaderProgram</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix.cpp">
+    <ClCompile Include="Matrix2.cpp">
       <Filter>소스 파일\Math\Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="Vector.cpp">
+    <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Math\Vector</Filter>
     </ClCompile>
   </ItemGroup>
