@@ -10,6 +10,10 @@ private:
 	float data_11, data_12, data_21, data_22;
 
 public:
+	const static Matrix2 one;
+	const static Matrix2 zero;
+	const static Matrix2 identity;
+
 	// 생성자
 	Matrix2();
 	Matrix2(float, float, float, float);
@@ -39,3 +43,4 @@ public:
 // 행렬-벡터 연산 (2차원)
 Vector2 operator*(const Matrix2&, const Vector2&);
 Vector2 operator*(const Vector2&, const Matrix2&);
+Vector2 operator*=(Vector2&, const Matrix2&);

@@ -70,8 +70,9 @@ void init()
 	GLfloat* color_buffer_data = new GLfloat[cnt];
 
 	mat2 mat = mat2(1.f, 2.f, 3.f, 4.f);
-	vec2 vec = vec2(1.f, 2.f);
-	vec = ~mat * vec;
+	vec2 vec = vec2::one * mat;
+
+	vec *= mat2::identity;
 
 	cout << vec.x << ", " << vec.y << endl;
 

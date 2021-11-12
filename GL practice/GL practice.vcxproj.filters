@@ -45,6 +45,12 @@
     <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Math\Vector</Filter>
     </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>소스 파일\Math\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>소스 파일\Math\Vector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GLUTWindow.h">

@@ -1,5 +1,9 @@
 #include "Matrix.h"
 
+const Matrix2 Matrix2::one = Matrix2(1.0f, 1.0f, 1.0f, 1.0f);
+const Matrix2 Matrix2::zero = Matrix2(0.0f, 0.0f, 0.0f, 0.0f);
+const Matrix2 Matrix2::identity = Matrix2(1.0f, 0.0f, 0.0f, 1.0f);
+
 Matrix2::Matrix2()
 {
 	data_11 = 0.0f;
@@ -139,4 +143,9 @@ Vector2 operator*(const Matrix2& m, const Vector2& v)
 Vector2 operator*(const Vector2& v, const Matrix2& m)
 {
 	return Vector2(v.x * m.data_11 + v.y * m.data_21, v.x * m.data_12 + v.y * m.data_22);
+}
+
+Vector2 operator*=(Vector2& v, const Matrix2& m)
+{
+	return v = v * m;
 }

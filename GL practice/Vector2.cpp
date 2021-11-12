@@ -1,5 +1,10 @@
 #include "Vector.h"
 
+const Vector2 Vector2::one = Vector2(1.0f, 1.0f);
+const Vector2 Vector2::zero = Vector2(0.0f, 0.0f);
+const Vector2 Vector2::x_axis = Vector2(1.0f, 0.0f);
+const Vector2 Vector2::y_axis = Vector2(0.0f, 1.0f);
+
 Vector2::Vector2()
 {
 	x = 0.0f;
@@ -19,7 +24,7 @@ Vector2 Vector2::operator+(const Vector2& v) const
 
 Vector2 Vector2::operator-(const Vector2& v) const
 {
-	return Vector2(v.x - x, v.y - y);
+	return Vector2(x - v.x, y - v.y);
 }
 
 float Vector2::operator*(const Vector2& v) const
