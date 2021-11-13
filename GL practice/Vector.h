@@ -27,6 +27,9 @@ public:
 	Vector2 operator/(const float&) const;
 	Vector2 operator*=(const float&);
 	Vector2 operator/=(const float&);
+
+	// 단항
+	Vector2 operator-() const;
 } vec2;
 
 typedef class Vector3
@@ -61,6 +64,9 @@ public:
 	// 외적
 	Vector3 operator%(const Vector3&) const;
 	Vector3 operator%=(const Vector3&);
+
+	// 단항
+	Vector3 operator-() const;
 } vec3;
 
 typedef class Vector4
@@ -92,4 +98,7 @@ public:
 	Vector4 operator/(const float&) const;
 	Vector4 operator*=(const float&);
 	Vector4 operator/=(const float&);
+
+	// 단항
+	Vector4 operator-() const;
 } vec4;

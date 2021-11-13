@@ -69,12 +69,15 @@ void init()
 	GLfloat* pos_buffer_data = new GLfloat[cnt];
 	GLfloat* color_buffer_data = new GLfloat[cnt];
 
-	mat2 mat = mat2(1.f, 2.f, 3.f, 4.f);
-	vec2 vec = vec2::one * mat;
-
-	vec *= mat2::identity;
-
-	cout << vec.x << ", " << vec.y << endl;
+	mat4 mat = mat4(
+		5, 8, 4, 9,
+		7, 2, 9, 6,
+		6, 5, 0, 11,
+		1, 2, 3, 4
+	);
+	mat = mat * mat * mat;
+	vec4 vec = vec4(1, 2, 3, 4) * mat;
+	cout << vec.x << ", " << vec.y << ", " << vec.z << ", " << vec.w << endl;
 
 	for (int i = 0; i < cnt; i++)
 	{

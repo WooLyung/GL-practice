@@ -51,6 +51,12 @@
     <ClCompile Include="Vector4.cpp">
       <Filter>소스 파일\Math\Vector</Filter>
     </ClCompile>
+    <ClCompile Include="Matrix3.cpp">
+      <Filter>소스 파일\Math\Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4.cpp">
+      <Filter>소스 파일\Math\Matrix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GLUTWindow.h">

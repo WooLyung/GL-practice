@@ -71,3 +71,8 @@ Vector2 Vector2::operator/=(const float& i)
 {
 	return *this = *this / i;
 }
+
+Vector2 Vector2::operator-() const
+{
+	return Vector2(-x, -y);
+}

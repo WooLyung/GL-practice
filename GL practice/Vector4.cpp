@@ -77,3 +77,8 @@ Vector4 Vector4::operator/=(const float& i)
 {
 	return *this = *this / i;
 }
+
+Vector4 Vector4::operator-() const
+{
+	return Vector4(-x, -y, -z, -w);
+}

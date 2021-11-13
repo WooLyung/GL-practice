@@ -36,12 +36,11 @@ Matrix2 Matrix2::operator+(const Matrix2& m) const
 		);
 }
 
-
 Matrix2 Matrix2::operator-(const Matrix2& m) const
 {
 	return Matrix2(
-		m.data_11 - data_11, m.data_12 - data_12,
-		m.data_21 - data_21, m.data_22 - data_22
+		data_11 - m.data_11, data_12 - m.data_12,
+		data_21 - m.data_21, data_22 - m.data_22
 	);
 }
 
@@ -132,6 +131,14 @@ Matrix2 Matrix2::operator~() const
 	return Matrix2(
 		data_11, data_21,
 		data_12, data_22
+	);
+}
+
+Matrix2 Matrix2::operator-() const
+{
+	return Matrix2(
+		-data_11, -data_12,
+		-data_21, -data_22
 	);
 }
 
