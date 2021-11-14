@@ -3,55 +3,34 @@
 #include "ShaderProgram.h"
 #include <vector>
 #include <array>
+#include "main.h"
 using namespace std;
 
-#define LEVEL 5
-int cnt;
-float a = 0.08f;
+GLuint buffer[2];
+color4 quad_colors[36];
+point4 quad_vertices[36];
+int i = 0;
 
-int addPoint(const vector<array<float, 2>>& points, vector<float>& pos_data, vector<float>& color_data, vector<int>& weight, int sum, int max)
+void quad(int a, int b, int c, int d, const point4* vertices, const color4* colors)
 {
-	if (weight.size() == points.size())
-	{
-		int n = weight.size();
-
-		float x = 0.0f, y = 0.0f;
-		for (int i = 0; i < weight.size(); i++)
-		{
-			x += points[i][0] * (((float)weight[i] / max - a) / (1 - a * n));
-			y += points[i][1] * (((float)weight[i] / max - a) / (1 - a * n));
-		}
-		pos_data.push_back(x);
-		pos_data.push_back(y);
-		pos_data.push_back(0.0f);
-		color_data.push_back(x);
-		color_data.push_back(y);
-		color_data.push_back(0.9f);
-
-		x = 0.0f, y = 0.0f;
-		for (int i = 0; i < weight.size(); i++)
-		{
-			x += points[i][0] * ((float)weight[i] / max);
-			y += points[i][1] * ((float)weight[i] / max);
-		}
-		pos_data.push_back(x);
-		pos_data.push_back(y);
-		pos_data.push_back(0.0f);
-		color_data.push_back(1 - x);
-		color_data.push_back(1 - y);
-		color_data.push_back(0.1f);
-
-		return 6;
-	}
-	
-	int s = 0;
-	for (int i = 0; i <= max - sum; i++)
-	{
-		weight.push_back(i);
-		s += addPoint(points, pos_data, color_data, weight, sum + i, max);
-		weight.pop_back();
-	}
-	return s;
+	quad_colors[i] = colors[a];
+	quad_vertices[i] = vertices[a];
+	i++;
+	quad_colors[i] = colors[b];
+	quad_vertices[i] = vertices[b];
+	i++;
+	quad_colors[i] = colors[c];
+	quad_vertices[i] = vertices[c];
+	i++;
+	quad_colors[i] = colors[a];
+	quad_vertices[i] = vertices[a];
+	i++;
+	quad_colors[i] = colors[c];
+	quad_vertices[i] = vertices[c];
+	i++;
+	quad_colors[i] = colors[d];
+	quad_vertices[i] = vertices[d];
+	i++;
 }
 
 void init()
@@ -61,48 +40,92 @@ void init()
 	GLuint abuffer;
 	glGenVertexArrays(1, &abuffer);
 	glBindVertexArray(abuffer);
+	glGenBuffers(2, buffer);
+	glEnableVertexAttribArray(0);
+	glEnableVertexAttribArray(1);
 
-	vector<array<float, 2>> points = { { 0.35f * 0.5f + 0.5f, -0.35f * 0.5f + 0.5f }, {0.0f * 0.5f + 0.5f, 0.6f * 0.5f + 0.5f }, {0.5f * 0.5f + 0.5f, 0.2f * 0.5f + 0.5f}, {-0.5f * 0.5f + 0.5f, 0.2f * 0.5f + 0.5f} };
-	vector<float> pos_data, color_data;
-	vector<int> weight;
-	cnt = addPoint(points, pos_data, color_data, weight, 0, 20);
-	GLfloat* pos_buffer_data = new GLfloat[cnt];
-	GLfloat* color_buffer_data = new GLfloat[cnt];
+	point4 vertices[8] = {
+		point4(-1.0f, -1.0f, -1.0f, 1.0f), point4(1.0f, -1.0f, -1.0f, 1.0f),
+		point4(1.0f, 1.0f, -1.0f, 1.0f), point4(-1.0f, 1.0f, -1.0f, 1.0f),
+		point4(-1.0f, -1.0f, 1.0f, 1.0f), point4(1.0f, -1.0f, 1.0f, 1.0f),
+		point4(1.0f, 1.0f, 1.0f, 1.0f), point4(-1.0f, 1.0f, 1.0f, 1.0f),
+	};
+	color4 colors[8] = {
+		color4(0.0f, 0.0f, 0.0f, 1.0f),
+		color4(0.0f, 0.0f, 1.0f, 1.0f),
+		color4(0.0f, 1.0f, 0.0f, 1.0f),
+		color4(0.0f, 1.0f, 1.0f, 1.0f),
+		color4(1.0f, 0.0f, 0.0f, 1.0f),
+		color4(1.0f, 0.0f, 1.0f, 1.0f),
+		color4(1.0f, 1.0f, 0.0f, 1.0f),
+		color4(1.0f, 1.0f, 1.0f, 1.0f)
+	};
 
-	mat4 mat = mat4(
-		5, 8, 4, 9,
-		7, 2, 9, 6,
-		6, 5, 0, 11,
-		1, 2, 3, 4
+	quad(0, 3, 2, 1, vertices, colors);
+	quad(2, 3, 7, 6, vertices, colors);
+	quad(3, 0, 4, 7, vertices, colors);
+	quad(1, 2, 6, 5, vertices, colors);
+	quad(4, 5, 6, 7, vertices, colors);
+	quad(5, 4, 0, 1, vertices, colors);
+}
+
+void render()
+{
+	GLfloat* pos_buffer_data = new GLfloat[144];
+	GLfloat* color_buffer_data = new GLfloat[144];
+
+	static vec3 angle = vec3::zero;
+	angle += vec3(0.01f, 0.02f, 0.03f);
+
+	mat4 rotX = mat4(
+		1, 0, 0, 0,
+		0, cos(angle.x), -sin(angle.x), 0,
+		0, sin(angle.x), cos(angle.x), 0,
+		0, 0, 0, 1
 	);
-	mat = mat * mat * mat;
-	vec4 vec = vec4(1, 2, 3, 4) * mat;
-	cout << vec.x << ", " << vec.y << ", " << vec.z << ", " << vec.w << endl;
+	mat4 rotY = mat4(
+		cos(angle.y), -sin(angle.y), 0, 0,
+		sin(angle.y), cos(angle.y), 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1
+	);
+	mat4 rotZ = mat4(
+		cos(angle.z), 0, sin(angle.z), 0,
+		0, 1, 0, 0,
+		-sin(angle.z), 0, cos(angle.z), 0,
+		0, 0, 0, 1
+	);
 
-	for (int i = 0; i < cnt; i++)
+	for (int i = 0; i < 36; i++)
 	{
-		pos_buffer_data[i] = pos_data[i];
-		color_buffer_data[i] = color_data[i];
+		vec4 v = quad_vertices[i] * rotX * rotY * rotZ;
+
+		pos_buffer_data[i * 4] = v.x;
+		pos_buffer_data[i * 4 + 1] = v.y;
+		pos_buffer_data[i * 4 + 2] = v.z;
+		pos_buffer_data[i * 4 + 3] = v.w;
+		color_buffer_data[i * 4] = quad_colors[i].x;
+		color_buffer_data[i * 4 + 1] = quad_colors[i].y;
+		color_buffer_data[i * 4 + 2] = quad_colors[i].z;
+		color_buffer_data[i * 4 + 3] = quad_colors[i].w;
 	}
 
-	GLuint* buffer = new GLuint[2];
-	glGenBuffers(2, buffer);
-
 	glBindBuffer(GL_ARRAY_BUFFER, buffer[0]);
-	glBufferData(GL_ARRAY_BUFFER, 4 * cnt, pos_buffer_data, GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-	glEnableVertexAttribArray(0);
+	glBufferData(GL_ARRAY_BUFFER, 4 * 144, pos_buffer_data, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
 
 	glBindBuffer(GL_ARRAY_BUFFER, buffer[1]);
-	glBufferData(GL_ARRAY_BUFFER, 4 * cnt, color_buffer_data, GL_STATIC_DRAW);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
-	glEnableVertexAttribArray(1);
+	glBufferData(GL_ARRAY_BUFFER, 4 * 144, color_buffer_data, GL_STATIC_DRAW);
+	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
+
+	delete[] pos_buffer_data;
+	delete[] color_buffer_data;
 }
 
 void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glDrawArrays(GL_POINTS, 0, cnt);
+	glDrawArrays(GL_TRIANGLES, 0, 144);
 	glutSwapBuffers();
 }
 
@@ -112,13 +135,22 @@ void mouseFunc(int button, int state, int x, int y)
 		exit(0);
 }
 
+void idle()
+{
+	render();
+	glutPostRedisplay();
+}
+
 int main(int argc, char** argv)
 {
 	GLUTWindow* window = new GLUTWindow(argc, argv, display);
 	ShaderProgram* shader = new ShaderProgram();
 
-	glutMouseFunc(mouseFunc);
-
 	init();
+	render();
+
+	glutMouseFunc(mouseFunc);
+	glutIdleFunc(idle);
+
 	window->Start();
 }

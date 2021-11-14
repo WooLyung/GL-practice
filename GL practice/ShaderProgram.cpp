@@ -8,12 +8,12 @@ ShaderProgram::ShaderProgram()
 
 	const char* vertexShaderSource =
 		"#version 330 core\n"
-		"layout(location = 0) in vec3 aPos;"
-		"layout(location = 1) in vec3 inColor;"
-		"out vec3 color;"
+		"layout(location = 0) in vec4 aPos;"
+		"layout(location = 1) in vec4 inColor;"
+		"out vec4 color;"
 		"void main()"
 		"{"
-		"	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0f);"
+		"	gl_Position = vec4(aPos.x * 0.5f, aPos.y * 0.5f, aPos.z * 0.5f, 1.0f);"
 		"	color = inColor;"
 		"}";
 

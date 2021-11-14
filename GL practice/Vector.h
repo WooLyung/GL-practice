@@ -102,3 +102,13 @@ public:
 	// ´ÜÇ×
 	Vector4 operator-() const;
 } vec4;
+
+typedef Vector2 point2;
+typedef Vector2 color2;
+typedef Vector2 pos2;
+typedef Vector3 point3;
+typedef Vector3 color3;
+typedef Vector3 pos3;
+typedef Vector4 point4;
+typedef Vector4 color4;
+typedef Vector4 pos4;
