@@ -6,10 +6,14 @@
 #include "main.h"
 using namespace std;
 
+GLUTWindow* window;
+ShaderProgram* shader;
+
 GLuint buffer[2];
 color4 quad_colors[36];
 point4 quad_vertices[36];
 int i = 0;
+GLuint ctm_param = 0;
 
 void quad(int a, int b, int c, int d, const point4* vertices, const color4* colors)
 {
@@ -67,43 +71,16 @@ void init()
 	quad(1, 2, 6, 5, vertices, colors);
 	quad(4, 5, 6, 7, vertices, colors);
 	quad(5, 4, 0, 1, vertices, colors);
-}
 
-void render()
-{
 	GLfloat* pos_buffer_data = new GLfloat[144];
 	GLfloat* color_buffer_data = new GLfloat[144];
 
-	static vec3 angle = vec3::zero;
-	angle += vec3(0.01f, 0.02f, 0.03f);
-
-	mat4 rotX = mat4(
-		1, 0, 0, 0,
-		0, cos(angle.x), -sin(angle.x), 0,
-		0, sin(angle.x), cos(angle.x), 0,
-		0, 0, 0, 1
-	);
-	mat4 rotY = mat4(
-		cos(angle.y), -sin(angle.y), 0, 0,
-		sin(angle.y), cos(angle.y), 0, 0,
-		0, 0, 1, 0,
-		0, 0, 0, 1
-	);
-	mat4 rotZ = mat4(
-		cos(angle.z), 0, sin(angle.z), 0,
-		0, 1, 0, 0,
-		-sin(angle.z), 0, cos(angle.z), 0,
-		0, 0, 0, 1
-	);
-
 	for (int i = 0; i < 36; i++)
 	{
-		vec4 v = quad_vertices[i] * rotX * rotY * rotZ;
-
-		pos_buffer_data[i * 4] = v.x;
-		pos_buffer_data[i * 4 + 1] = v.y;
-		pos_buffer_data[i * 4 + 2] = v.z;
-		pos_buffer_data[i * 4 + 3] = v.w;
+		pos_buffer_data[i * 4] = quad_vertices[i].x;
+		pos_buffer_data[i * 4 + 1] = quad_vertices[i].y;
+		pos_buffer_data[i * 4 + 2] = quad_vertices[i].z;
+		pos_buffer_data[i * 4 + 3] = quad_vertices[i].w;
 		color_buffer_data[i * 4] = quad_colors[i].x;
 		color_buffer_data[i * 4 + 1] = quad_colors[i].y;
 		color_buffer_data[i * 4 + 2] = quad_colors[i].z;
@@ -118,15 +95,25 @@ void render()
 	glBufferData(GL_ARRAY_BUFFER, 4 * 144, color_buffer_data, GL_STATIC_DRAW);
 	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
 
+	ctm_param = glGetUniformLocation(shader->getShaderProgram(), "mat");
+
 	delete[] pos_buffer_data;
 	delete[] color_buffer_data;
 }
 
 void display()
 {
+	mat4 l2w = mat4::Translate(0.0f, 0.5f, 0.0f) * mat4::Rotate(1.0f, 1.0f, 1.0f) * mat4::Scale(1.0f, 1.0f, 1.0f);
+	mat4 w2c = mat4::Translate(0.0f, -0.5f, 0.0f) * mat4::Rotate(0.0f, 0.0f, -1.0f);
+	mat4 ortho = mat4::Ortho(-2.0f, -2.0f, -2.0f, 2.0f, 2.0f, 2.0f);
+	float* ctm_buffer = (ortho * w2c * l2w).ToArray();
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glUniformMatrix4fv(ctm_param, 1, GL_TRUE, ctm_buffer);
 	glDrawArrays(GL_TRIANGLES, 0, 144);
 	glutSwapBuffers();
+
+	free(ctm_buffer);
 }
 
 void mouseFunc(int button, int state, int x, int y)
@@ -137,17 +124,15 @@ void mouseFunc(int button, int state, int x, int y)
 
 void idle()
 {
-	render();
 	glutPostRedisplay();
 }
 
 int main(int argc, char** argv)
 {
-	GLUTWindow* window = new GLUTWindow(argc, argv, display);
-	ShaderProgram* shader = new ShaderProgram();
+	window = new GLUTWindow(argc, argv, display);
+	shader = new ShaderProgram();
 
 	init();
-	render();
 
 	glutMouseFunc(mouseFunc);
 	glutIdleFunc(idle);

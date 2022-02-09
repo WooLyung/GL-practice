@@ -4,6 +4,11 @@
 #pragma once
 class ShaderProgram
 {
+private:
+	GLuint shaderProgram;
+
 public:
 	ShaderProgram();
+
+	GLuint getShaderProgram();
 };

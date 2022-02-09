@@ -1,4 +1,5 @@
 #include "Matrix.h"
+#include <math.h>
 
 const Matrix4 Matrix4::one = Matrix4(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f);
 const Matrix4 Matrix4::zero = Matrix4(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
@@ -230,4 +231,85 @@ Vector4 operator*(const Vector4& v, const Matrix4& m)
 Vector4 operator*=(Vector4& v, const Matrix4& m)
 {
 	return v = v * m;
+}
+
+Matrix4 Matrix4::Translate(float x, float y, float z)
+{
+	return Matrix4(
+		1, 0, 0, x,
+		0, 1, 0, y,
+		0, 0, 1, z,
+		0, 0, 0, 1
+	);
+}
+
+Matrix4 Matrix4::RotateX(float angle)
+{
+	float c = cos(angle);
+	float s = sin(angle);
+	return Matrix4(
+		1, 0, 0, 0,
+		0, c, -s, 0,
+		0, s, c, 0,
+		0, 0, 0, 1
+	);
+}
+
+Matrix4 Matrix4::RotateY(float angle)
+{
+	float c = cos(angle);
+	float s = sin(angle);
+	return Matrix4(
+		c, 0, s, 0,
+		0, 1, 0, 0,
+		-s, 0, c, 0,
+		0, 0, 0, 1
+	);
+}
+
+Matrix4 Matrix4::RotateZ(float angle)
+{
+	float c = cos(angle);
+	float s = sin(angle);
+	return Matrix4(
+		c, -s, 0, 0,
+		s, c, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1
+	);
+}
+
+Matrix4 Matrix4::Rotate(float x, float y, float z)
+{
+	return RotateX(x) * RotateY(y) * RotateZ(z);
+}
+
+Matrix4 Matrix4::Scale(float x, float y, float z)
+{
+	return Matrix4(
+		x, 0, 0, 0,
+		0, y, 0, 0,
+		0, 0, z, 0,
+		0, 0, 0, 1
+	);
+}
+
+Matrix4 Matrix4::Ortho(float left, float bottom, float near, float right, float top, float far)
+{
+	return Matrix4(
+		2.0f/(right-left), 0, 0, -(left+right)/(right-left),
+		0, 2.0f/(top-bottom), 0, -(top+bottom)/(top-bottom),
+		0, 0, -2.0f/(far-near), -(far+near)/(far-near),
+		0, 0, 0, 1
+	);
+}
+
+float* Matrix4::ToArray() const
+{
+	return new float[16]{
+		data_11, data_12, data_13, data_14,
+		data_21, data_22, data_23, data_24,
+		data_31, data_32, data_33, data_34,
+		data_41, data_42, data_43, data_44
+	};
 }

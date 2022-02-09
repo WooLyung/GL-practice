@@ -104,6 +104,15 @@ public:
 	const static Matrix4 zero;
 	const static Matrix4 identity;
 
+	// 변환행렬
+	static Matrix4 Translate(float, float, float);
+	static Matrix4 RotateX(float);
+	static Matrix4 RotateY(float);
+	static Matrix4 RotateZ(float);
+	static Matrix4 Rotate(float, float, float);
+	static Matrix4 Scale(float, float, float);
+	static Matrix4 Ortho(float, float, float, float, float, float);
+
 	// 생성자
 	Matrix4();
 	Matrix4(float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float);
@@ -129,6 +138,7 @@ public:
 	float& operator()(const int&, const int&); // 인덱스
 	Matrix4 operator~() const; // 전치 행렬
 	Matrix4 operator-() const;
+	float* ToArray() const;
 } mat4;
 
 // 행렬-벡터 연산 (2차원)

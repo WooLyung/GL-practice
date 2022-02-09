@@ -10,10 +10,12 @@ ShaderProgram::ShaderProgram()
 		"#version 330 core\n"
 		"layout(location = 0) in vec4 aPos;"
 		"layout(location = 1) in vec4 inColor;"
+		"uniform mat4 mat;"
 		"out vec4 color;"
 		"void main()"
 		"{"
-		"	gl_Position = vec4(aPos.x * 0.5f, aPos.y * 0.5f, aPos.z * 0.5f, 1.0f);"
+		"	vec4 pos = mat * aPos;"
+		"	gl_Position = vec4(pos.x, pos.y, pos.z, 1.0f);"
 		"	color = inColor;"
 		"}";
 
@@ -50,7 +52,6 @@ ShaderProgram::ShaderProgram()
 		std::cout << "Shader Compile Error (Fragment Shader):\n" << infoLog << std::endl;
 	}
 
-	GLuint shaderProgram;
 	shaderProgram = glCreateProgram();
 
 	glAttachShader(shaderProgram, vertexShader);
@@ -63,4 +64,9 @@ ShaderProgram::ShaderProgram()
 		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
 		std::cout << "Program Link Error:\n" << infoLog << std::endl;
 	}
+}
+
+GLuint ShaderProgram::getShaderProgram()
+{
+	return shaderProgram;
 }
