@@ -14,6 +14,7 @@ color4 quad_colors[36];
 point4 quad_vertices[36];
 int i = 0;
 GLuint ctm_param = 0;
+GLuint pro_param = 0;
 
 void quad(int a, int b, int c, int d, const point4* vertices, const color4* colors)
 {
@@ -95,7 +96,8 @@ void init()
 	glBufferData(GL_ARRAY_BUFFER, 4 * 144, color_buffer_data, GL_STATIC_DRAW);
 	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
 
-	ctm_param = glGetUniformLocation(shader->getShaderProgram(), "mat");
+	ctm_param = glGetUniformLocation(shader->getShaderProgram(), "mv");
+	pro_param = glGetUniformLocation(shader->getShaderProgram(), "p");
 
 	delete[] pos_buffer_data;
 	delete[] color_buffer_data;
@@ -103,17 +105,20 @@ void init()
 
 void display()
 {
-	mat4 l2w = mat4::Translate(0.0f, 0.5f, 0.0f) * mat4::Rotate(1.0f, 1.0f, 1.0f) * mat4::Scale(1.0f, 1.0f, 1.0f);
-	mat4 w2c = mat4::Translate(0.0f, -0.5f, 0.0f) * mat4::Rotate(0.0f, 0.0f, -1.0f);
-	mat4 ortho = mat4::Ortho(-2.0f, -2.0f, -2.0f, 2.0f, 2.0f, 2.0f);
-	float* ctm_buffer = (ortho * w2c * l2w).ToArray();
+	mat4 l2w = mat4::Translate(0.0f, 0.0f, 0.0f) * mat4::Rotate(0.0f, 0.0f, 0.0f) * mat4::Scale(1.0f, 1.0f, 1.0f);
+	mat4 w2c = mat4::Rotate(0.0f, 0.5f, 0.0f) * mat4::Translate(0.0f, 0.0f, -5.0f);
+	mat4 frustum = mat4::Frustum(1.0f, 1.0f, 1.0f, 2.0f);
+	float* ctm_buffer = (w2c * l2w).ToArray();
+	float* pro_buffer = frustum.ToArray();
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glUniformMatrix4fv(ctm_param, 1, GL_TRUE, ctm_buffer);
+	glUniformMatrix4fv(pro_param, 1, GL_TRUE, pro_buffer);
 	glDrawArrays(GL_TRIANGLES, 0, 144);
 	glutSwapBuffers();
 
 	free(ctm_buffer);
+	free(pro_buffer);
 }
 
 void mouseFunc(int button, int state, int x, int y)

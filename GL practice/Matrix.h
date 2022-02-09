@@ -111,7 +111,8 @@ public:
 	static Matrix4 RotateZ(float);
 	static Matrix4 Rotate(float, float, float);
 	static Matrix4 Scale(float, float, float);
-	static Matrix4 Ortho(float, float, float, float, float, float);
+	static Matrix4 Ortho(float left, float bottom, float near_, float right, float top, float far_);
+	static Matrix4 Frustum(float right, float top, float near_, float far_);
 
 	// »ý¼ºÀÚ
 	Matrix4();

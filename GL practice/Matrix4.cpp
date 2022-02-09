@@ -304,6 +304,16 @@ Matrix4 Matrix4::Ortho(float left, float bottom, float near, float right, float 
 	);
 }
 
+Matrix4 Matrix4::Frustum(float right, float top, float near, float far)
+{
+	return Matrix4(
+		near / right, 0, 0, 0,
+		0, near / top, 0, 0,
+		0, 0, (-far + near) / (far - near), (-2 * far * near) / (far - near),
+		0, 0, -1, 0
+	);
+}
+
 float* Matrix4::ToArray() const
 {
 	return new float[16]{

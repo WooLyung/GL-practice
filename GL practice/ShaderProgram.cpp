@@ -10,12 +10,12 @@ ShaderProgram::ShaderProgram()
 		"#version 330 core\n"
 		"layout(location = 0) in vec4 aPos;"
 		"layout(location = 1) in vec4 inColor;"
-		"uniform mat4 mat;"
+		"uniform mat4 mv;"
+		"uniform mat4 p;"
 		"out vec4 color;"
 		"void main()"
 		"{"
-		"	vec4 pos = mat * aPos;"
-		"	gl_Position = vec4(pos.x, pos.y, pos.z, 1.0f);"
+		"	gl_Position = p * mv * aPos;"
 		"	color = inColor;"
 		"}";
 
