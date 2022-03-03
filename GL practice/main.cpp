@@ -105,11 +105,16 @@ void init()
 
 void display()
 {
-	mat4 l2w = mat4::Translate(0.0f, 0.0f, 0.0f) * mat4::Rotate(0.0f, 0.0f, 0.0f) * mat4::Scale(1.0f, 1.0f, 1.0f);
-	mat4 w2c = mat4::Rotate(0.0f, 0.5f, 0.0f) * mat4::Translate(0.0f, 0.0f, -5.0f);
-	mat4 frustum = mat4::Frustum(1.0f, 1.0f, 1.0f, 2.0f);
-	float* ctm_buffer = (w2c * l2w).ToArray();
-	float* pro_buffer = frustum.ToArray();
+	mat4 l2w = mat4::Translate(0.0f, 0.0f, 0.0f) * mat4::Rotate(0.0f, 0.0f, 0.0f) * mat4::Scale(0.3f, 0.3f, 0.3f);
+	mat4 w2c = mat4::Rotate(0.0f, 0.0f, 0.0f) * mat4::Translate(0.0f, 0.0f, 0.0f);
+	mat4 shear = mat4(1.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 1.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f);
+	// mat4 frustum = mat4::Frustum(1.0f, 1.0f, 1.0f, 2.0f);
+	mat4 ortho = mat4::Ortho(-1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f);
+	float* ctm_buffer = (shear * w2c * l2w).ToArray();
+	float* pro_buffer = ortho.ToArray();
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glUniformMatrix4fv(ctm_param, 1, GL_TRUE, ctm_buffer);
