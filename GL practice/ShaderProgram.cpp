@@ -9,11 +9,13 @@ ShaderProgram::ShaderProgram()
 	const char* vertexShaderSource =
 		"#version 330 core\n"
 		"layout(location = 0) in vec4 aPos;"
+		"out vec4 color;"
 		"uniform mat4 mv;"
 		"uniform mat4 p;"
 		"void main()"
 		"{"
 		"	gl_Position = p * mv * aPos;"
+		"	color = vec4(aPos.x / 20.0f + 0.5f, 0.8f, aPos.y / 20.0f + 0.5f, 1.0f);"
 		"}";
 
 	GLuint vertexShader;
@@ -31,9 +33,10 @@ ShaderProgram::ShaderProgram()
 	const char* fragmentShaderSource =
 		"#version 330 core\n"
 		"out vec4 FragColor;"
+		"in vec4 color;"
 		"void main()"
 		"{"
-		"	FragColor = vec4(1, 1, 1, 1);"
+		"	FragColor = color;"
 		"}";
 
 	GLuint fragmentShader;
