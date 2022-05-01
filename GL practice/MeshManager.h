@@ -10,6 +10,8 @@ private:
 	map<string, Mesh*> meshs;
 
 public:
+	~MeshManager();
+
 	void addMesh(string, Mesh*);
 	Mesh* getMesh(string);
 

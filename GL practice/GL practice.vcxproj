@@ -178,6 +178,7 @@
   <ItemGroup>
     <None Include="DefaultFragmentShader.glsl" />
     <None Include="DefaultVertexShader.glsl" />
+    <None Include="Hello.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

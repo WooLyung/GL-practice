@@ -1,4 +1,6 @@
 #include "WEngine.h"
+#include "ShaderManager.h"
+#include "MeshManager.h"
 
 static WEngine* engine = NULL;
 
@@ -53,4 +55,6 @@ WEngine::~WEngine()
 	delete objects;
 	delete window;
 	delete graphic;
+	delete ShaderManager::getInstance();
+	delete MeshManager::getInstance();
 }

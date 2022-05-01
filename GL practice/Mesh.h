@@ -7,6 +7,7 @@ private:
 	GLuint VAO = 0;
 
 public:
-	virtual GLuint getVAO() = 0;
+	virtual size_t getVAOcount() = 0;
+	virtual GLuint* getVAOs() = 0;
 	virtual void render() = 0;
 };

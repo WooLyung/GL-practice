@@ -10,6 +10,8 @@ private:
 	map<string, Shader*> shaders;
 
 public:
+	~ShaderManager();
+
 	void addShader(string, string, string);
 	Shader* getShader(string);
 

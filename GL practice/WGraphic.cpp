@@ -8,6 +8,7 @@
 void WGraphic::shaderInit()
 {
 	ShaderManager::getInstance()->addShader("default", "DefaultVertexShader.glsl", "DefaultFragmentShader.glsl");
+	ShaderManager::getInstance()->addShader("hello", "Hello.glsl", "DefaultFragmentShader.glsl");
 	MeshManager::getInstance()->addMesh("test", new TestMesh(20));
 }
 

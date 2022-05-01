@@ -8,5 +8,7 @@ class WObjects
 public:
 	vector<Object*> objects;
 
+	~WObjects();
+
 	void init();
 };

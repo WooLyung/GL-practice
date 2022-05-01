@@ -11,6 +11,7 @@ private:
 public:
 	TestMesh(int);
 
-	GLuint getVAO();
+	size_t getVAOcount();
+	GLuint* getVAOs();
 	void render();
 };

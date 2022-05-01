@@ -21,3 +21,9 @@ MeshManager* MeshManager::getInstance()
 	else
 		return instance = new MeshManager();
 }
+
+MeshManager::~MeshManager()
+{
+	for (auto pair : meshs)
+		delete pair.second;
+}

@@ -22,3 +22,9 @@ ShaderManager* ShaderManager::getInstance()
 	else
 		return instance = new ShaderManager();
 }
+
+ShaderManager::~ShaderManager()
+{
+	for (auto pair : shaders)
+		delete pair.second;
+}

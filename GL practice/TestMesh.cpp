@@ -60,12 +60,18 @@ TestMesh::TestMesh(int n)
 	delete[] pos_buffer_data;
 }
 
-GLuint TestMesh::getVAO()
+GLuint* TestMesh::getVAOs()
 {
-	return VAO;
+	return &VAO;
+}
+
+size_t TestMesh::getVAOcount()
+{
+	return 1;
 }
 
 void TestMesh::render()
 {
+	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, n * n * 6 * 4);
 }
