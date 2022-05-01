@@ -1,15 +1,56 @@
 #include "WEngine.h"
 
+static WEngine* engine = NULL;
+
+namespace callbacks
+{
+	void display()
+	{
+		if (engine)
+			engine->display();
+	}
+
+	void idle()
+	{
+		if (engine)
+			engine->idle();
+	}
+}
+
+void WEngine::idle()
+{
+	graphic->idle();
+}
+
 void WEngine::init(int argc, char** argv)
 {
-	window = new WWindow(argc, argv);
-	meshs = new WMeshs();
+	engine = this;
+
+	window = new WWindow();
+	objects = new WObjects();
 	graphic = new WGraphic();
 
-	graphic->init();
+	window->init(argc, argv);
+	graphic->init(objects);
+	objects->init();
+
+	glutDisplayFunc(callbacks::display);
+	glutIdleFunc(callbacks::idle);
+}
+
+void WEngine::display()
+{
+	graphic->render();
 }
 
 void WEngine::start()
 {
 	glutMainLoop();
+}
+
+WEngine::~WEngine()
+{
+	delete objects;
+	delete window;
+	delete graphic;
 }

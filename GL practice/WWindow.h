@@ -4,5 +4,5 @@
 class WWindow
 {
 public:
-	WWindow(int, char**);
+	void init(int, char**);
 };

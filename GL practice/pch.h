@@ -7,6 +7,7 @@
 #include <gl/glut.h>
 #include <math.h>
 #include <iostream>
+#include <string>
 #include "Matrix.h"
 #include "Vector.h"
 

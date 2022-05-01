@@ -13,69 +13,166 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\Window">
+    <Filter Include="소스 파일\OpenGL">
+      <UniqueIdentifier>{70add6b7-4aaf-4b0a-ac90-69b6212ff55a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\System">
+      <UniqueIdentifier>{145126dc-09eb-4994-b023-e3ba0f01a1f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\System\Engine">
+      <UniqueIdentifier>{d6b18eb8-47c4-4751-85ce-3f46000cd123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\System\Window">
       <UniqueIdentifier>{3a723547-2dd9-4dbf-badd-72f3e9d19d0e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\ShaderProgram">
-      <UniqueIdentifier>{abf68038-3ab1-4247-9b33-b35980df4ccb}</UniqueIdentifier>
+    <Filter Include="소스 파일\OpenGL\System\Graphic">
+      <UniqueIdentifier>{8f2cb68b-0d1a-4cca-b378-e001a31945f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Math">
+    <Filter Include="소스 파일\OpenGL\Component">
+      <UniqueIdentifier>{daeb52f9-4929-41a7-bc33-43a7da8e3384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Mesh">
+      <UniqueIdentifier>{552bc8cb-a728-4670-bc47-128f12e1900f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Shader">
+      <UniqueIdentifier>{204b398c-db28-4f25-a585-21ceed030be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\Math">
       <UniqueIdentifier>{51f418e3-c881-4384-9612-5d3cf0756112}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Math\Matrix">
+    <Filter Include="소스 파일\OpenGL\Math\Matrix">
       <UniqueIdentifier>{2903b67c-2481-47da-9897-5582d8d6f87a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Math\Vector">
+    <Filter Include="소스 파일\OpenGL\Math\Vector">
       <UniqueIdentifier>{c33b10ea-18c6-469e-9699-23782494e8f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Example">
+      <UniqueIdentifier>{e3127b3f-ce8a-4cd4-bfa1-6de58bf1bf29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Example\Shader">
+      <UniqueIdentifier>{ab7b51f6-e588-43f5-835d-5842d7488b92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Object">
+      <UniqueIdentifier>{b4956607-9728-415c-a40e-6285f3b58643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Shader\Manager">
+      <UniqueIdentifier>{a7a4fec8-6b2a-4c42-8f09-152ffc51ac5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\System\Objects">
+      <UniqueIdentifier>{65477d45-2f5b-47a0-873b-b25e7943ae9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Example\Mesh">
+      <UniqueIdentifier>{7525e682-9506-4d6e-aec8-afce65ee7b1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Example\Mesh\TestMesh">
+      <UniqueIdentifier>{306caacc-7f34-4ed8-b559-7b72c3cf0187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Mesh\Manager">
+      <UniqueIdentifier>{f134a23b-7b65-4fde-81b1-6907ca89a905}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GLUTWindow.cpp">
-      <Filter>소스 파일\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="ShaderProgram.cpp">
-      <Filter>소스 파일\ShaderProgram</Filter>
+    <ClCompile Include="WWindow.cpp">
+      <Filter>소스 파일\OpenGL\System\Window</Filter>
     </ClCompile>
     <ClCompile Include="Matrix2.cpp">
-      <Filter>소스 파일\Math\Matrix</Filter>
+      <Filter>소스 파일\OpenGL\Math\Matrix</Filter>
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
-      <Filter>소스 파일\Math\Vector</Filter>
+      <Filter>소스 파일\OpenGL\Math\Vector</Filter>
     </ClCompile>
     <ClCompile Include="Vector3.cpp">
-      <Filter>소스 파일\Math\Vector</Filter>
+      <Filter>소스 파일\OpenGL\Math\Vector</Filter>
     </ClCompile>
     <ClCompile Include="Vector4.cpp">
-      <Filter>소스 파일\Math\Vector</Filter>
+      <Filter>소스 파일\OpenGL\Math\Vector</Filter>
     </ClCompile>
     <ClCompile Include="Matrix3.cpp">
-      <Filter>소스 파일\Math\Matrix</Filter>
+      <Filter>소스 파일\OpenGL\Math\Matrix</Filter>
     </ClCompile>
     <ClCompile Include="Matrix4.cpp">
-      <Filter>소스 파일\Math\Matrix</Filter>
+      <Filter>소스 파일\OpenGL\Math\Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="WEngine.cpp">
+      <Filter>소스 파일\OpenGL\System\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>소스 파일\OpenGL\Component\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="WObjects.cpp">
+      <Filter>소스 파일\OpenGL\System\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="WGraphic.cpp">
+      <Filter>소스 파일\OpenGL\System\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\OpenGL\Component\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>소스 파일\OpenGL\Component\Shader\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMesh.cpp">
+      <Filter>소스 파일\Example\Mesh\TestMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshManager.cpp">
+      <Filter>소스 파일\OpenGL\Component\Mesh\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GLUTWindow.h">
-      <Filter>소스 파일\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="ShaderProgram.h">
-      <Filter>소스 파일\ShaderProgram</Filter>
+    <ClInclude Include="WWindow.h">
+      <Filter>소스 파일\OpenGL\System\Window</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Matrix.h">
-      <Filter>소스 파일\Math\Matrix</Filter>
+      <Filter>소스 파일\OpenGL\Math\Matrix</Filter>
     </ClInclude>
     <ClInclude Include="Vector.h">
-      <Filter>소스 파일\Math\Vector</Filter>
+      <Filter>소스 파일\OpenGL\Math\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="WEngine.h">
+      <Filter>소스 파일\OpenGL\System\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>소스 파일\OpenGL\Component\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>소스 파일\OpenGL\Component\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="WObjects.h">
+      <Filter>소스 파일\OpenGL\System\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="WGraphic.h">
+      <Filter>소스 파일\OpenGL\System\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\OpenGL\Component\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>소스 파일\OpenGL\Component\Shader\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMesh.h">
+      <Filter>소스 파일\Example\Mesh\TestMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshManager.h">
+      <Filter>소스 파일\OpenGL\Component\Mesh\Manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GL practice.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DefaultVertexShader.glsl">
+      <Filter>소스 파일\Example\Shader</Filter>
+    </None>
+    <None Include="DefaultFragmentShader.glsl">
+      <Filter>소스 파일\Example\Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

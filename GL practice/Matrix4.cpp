@@ -10,12 +10,19 @@ Matrix4::Matrix4()
 	data_11 = 0.0f;
 	data_12 = 0.0f;
 	data_13 = 0.0f;
+	data_14 = 0.0f;
 	data_21 = 0.0f;
 	data_22 = 0.0f;
 	data_23 = 0.0f;
+	data_24 = 0.0f;
 	data_31 = 0.0f;
 	data_32 = 0.0f;
 	data_33 = 0.0f;
+	data_34 = 0.0f;
+	data_41 = 0.0f;
+	data_42 = 0.0f;
+	data_43 = 0.0f;
+	data_44 = 0.0f;
 }
 
 Matrix4::Matrix4(float a11, float a12, float a13, float a14, float a21, float a22, float a23, float a24, float a31, float a32, float a33, float a34, float a41, float a42, float a43, float a44)
