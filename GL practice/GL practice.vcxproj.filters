@@ -70,6 +70,9 @@
     <Filter Include="소스 파일\OpenGL\Component\Mesh\Manager">
       <UniqueIdentifier>{f134a23b-7b65-4fde-81b1-6907ca89a905}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Camera">
+      <UniqueIdentifier>{bb5713b4-ed93-42f0-bf9d-5614942f308c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -120,6 +123,9 @@
     <ClCompile Include="MeshManager.cpp">
       <Filter>소스 파일\OpenGL\Component\Mesh\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>소스 파일\OpenGL\Component\Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -160,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="MeshManager.h">
       <Filter>소스 파일\OpenGL\Component\Mesh\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>소스 파일\OpenGL\Component\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

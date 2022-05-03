@@ -1,9 +1,11 @@
 #pragma once
 #include "WObjects.h"
+#include "Camera.h"
 
 class WGraphic
 {
 private:
+	Camera* camera = new Camera();
 	WObjects* objects;
 
 	void shaderInit();
