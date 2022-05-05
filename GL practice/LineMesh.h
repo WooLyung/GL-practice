@@ -1,15 +1,14 @@
 #pragma once
 #include "Mesh.h"
 
-class TestMesh :
-    public Mesh
+class LineMesh :
+	public Mesh
 {
 private:
-	int n;
-	GLuint VAO;
+	GLuint VAO[42];
 
 public:
-	TestMesh(int);
+	LineMesh();
 
 	size_t getVAOcount();
 	GLuint* getVAOs();

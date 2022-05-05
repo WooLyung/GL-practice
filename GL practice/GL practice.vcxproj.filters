@@ -73,6 +73,9 @@
     <Filter Include="소스 파일\OpenGL\Component\Camera">
       <UniqueIdentifier>{bb5713b4-ed93-42f0-bf9d-5614942f308c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Example\Mesh\LineMesh">
+      <UniqueIdentifier>{cbd4ea4e-bcfd-406b-917f-11322a9208c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -117,7 +120,7 @@
     <ClCompile Include="ShaderManager.cpp">
       <Filter>소스 파일\OpenGL\Component\Shader\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="TestMesh.cpp">
+    <ClCompile Include="FaceMesh.cpp">
       <Filter>소스 파일\Example\Mesh\TestMesh</Filter>
     </ClCompile>
     <ClCompile Include="MeshManager.cpp">
@@ -125,6 +128,9 @@
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>소스 파일\OpenGL\Component\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="LineMesh.cpp">
+      <Filter>소스 파일\Example\Mesh\LineMesh</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,7 +167,7 @@
     <ClInclude Include="ShaderManager.h">
       <Filter>소스 파일\OpenGL\Component\Shader\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="TestMesh.h">
+    <ClInclude Include="FaceMesh.h">
       <Filter>소스 파일\Example\Mesh\TestMesh</Filter>
     </ClInclude>
     <ClInclude Include="MeshManager.h">
@@ -169,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>소스 파일\OpenGL\Component\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="LineMesh.h">
+      <Filter>소스 파일\Example\Mesh\LineMesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

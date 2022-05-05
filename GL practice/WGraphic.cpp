@@ -3,17 +3,19 @@
 #include "Object.h"
 #include "ShaderManager.h"
 #include "MeshManager.h"
-#include "TestMesh.h"
+#include "FaceMesh.h"
+#include "LineMesh.h"
 
 void WGraphic::shaderInit()
 {
-	camera->location = vec3(0.0f, -5.0f, 1.0f);
-	camera->rotation = vec3(1.7f, 0.0f, 0.0f);
+	camera->location = vec3(-3.0f, -3.0f, 2.0f);
+	camera->rotation = vec3(2.0f, 0.0f, 0.8f);
 	camera->scale = vec3(1.0f, 1.0f, 1.0f);
 
 	ShaderManager::getInstance()->addShader("default", "DefaultVertexShader.glsl", "DefaultFragmentShader.glsl");
 	ShaderManager::getInstance()->addShader("white", "DefaultVertexShader.glsl", "WhiteFragmentShader.glsl");
-	MeshManager::getInstance()->addMesh("test", new TestMesh(20));
+	MeshManager::getInstance()->addMesh("face", new FaceMesh(20));
+	MeshManager::getInstance()->addMesh("line", new LineMesh());
 }
 
 void WGraphic::init(WObjects* objects)
@@ -23,6 +25,9 @@ void WGraphic::init(WObjects* objects)
 	this->objects = objects;
 
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_POLYGON_OFFSET_FILL);
+
+	glPolygonOffset(1.0f, 1.0f);
 }
 
 void WGraphic::render()

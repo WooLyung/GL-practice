@@ -1,11 +1,11 @@
-#include "TestMesh.h"
+#include "FaceMesh.h"
 
 float f(float z, float x)
 {
 	return x / (z * z + 1);
 }
 
-TestMesh::TestMesh(int n)
+FaceMesh::FaceMesh(int n)
 {
 	this->n = n;
 
@@ -60,17 +60,17 @@ TestMesh::TestMesh(int n)
 	delete[] pos_buffer_data;
 }
 
-GLuint* TestMesh::getVAOs()
+GLuint* FaceMesh::getVAOs()
 {
 	return &VAO;
 }
 
-size_t TestMesh::getVAOcount()
+size_t FaceMesh::getVAOcount()
 {
 	return 1;
 }
 
-void TestMesh::render()
+void FaceMesh::render()
 {
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, n * n * 6 * 4);

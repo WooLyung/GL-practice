@@ -141,11 +141,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="LineMesh.cpp" />
     <ClCompile Include="MeshManager.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
-    <ClCompile Include="TestMesh.cpp" />
+    <ClCompile Include="FaceMesh.cpp" />
     <ClCompile Include="WEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WGraphic.cpp" />
@@ -160,12 +161,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="LineMesh.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshManager.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderManager.h" />
-    <ClInclude Include="TestMesh.h" />
+    <ClInclude Include="FaceMesh.h" />
     <ClInclude Include="WEngine.h" />
     <ClInclude Include="WGraphic.h" />
     <ClInclude Include="WObjects.h" />
