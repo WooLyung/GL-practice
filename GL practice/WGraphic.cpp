@@ -12,7 +12,7 @@ void WGraphic::shaderInit()
 	camera->scale = vec3(1.0f, 1.0f, 1.0f);
 
 	ShaderManager::getInstance()->addShader("default", "DefaultVertexShader.glsl", "DefaultFragmentShader.glsl");
-	ShaderManager::getInstance()->addShader("hello", "Hello.glsl", "DefaultFragmentShader.glsl");
+	ShaderManager::getInstance()->addShader("white", "DefaultVertexShader.glsl", "WhiteFragmentShader.glsl");
 	MeshManager::getInstance()->addMesh("test", new TestMesh(20));
 }
 
@@ -38,9 +38,9 @@ void WGraphic::render()
 		float* ctm_buffer = (w2c * l2w).ToArray();
 		float* pro_buffer = frustum.ToArray();
 	
+		glUseProgram(obj->shader->getProgram());
 		glUniformMatrix4fv(obj->shader->getCTMparam(), 1, GL_TRUE, ctm_buffer);
 		glUniformMatrix4fv(obj->shader->getPROparam(), 1, GL_TRUE, pro_buffer);
-		glUseProgram(obj->shader->getProgram());
 
 		obj->mesh->render();
 

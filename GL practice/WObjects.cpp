@@ -11,7 +11,7 @@ void WObjects::init()
 	objects.push_back(obj);
 
 	Object* obj2 = new Object();
-	obj2->shader = ShaderManager::getInstance()->getShader("hello");
+	obj2->shader = ShaderManager::getInstance()->getShader("white");
 	obj2->mesh = MeshManager::getInstance()->getMesh("test");
 	obj2->scale = vec3(0.2f, 0.2f, 0.2f);
 	obj2->location.z = 0.2f;

@@ -8,5 +8,5 @@ uniform mat4 p;
 void main()
 {
 	gl_Position = p * mv * aPos;
-	color = vec4(aPos.x / 20.0f + 0.5f, aPos.y / 20.0f + 0.5f, 0.8f, 1.0f);
+	color = vec4(1, 1, 1, 1);
 }

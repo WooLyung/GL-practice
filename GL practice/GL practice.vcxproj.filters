@@ -183,7 +183,7 @@
     <None Include="DefaultFragmentShader.glsl">
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
-    <None Include="Hello.glsl">
+    <None Include="WhiteFragmentShader.glsl">
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
   </ItemGroup>
