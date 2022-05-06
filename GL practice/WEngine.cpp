@@ -22,6 +22,8 @@ namespace callbacks
 void WEngine::idle()
 {
 	time->update();
+	objects->update();
+	graphic->update();
 	graphic->idle();
 }
 

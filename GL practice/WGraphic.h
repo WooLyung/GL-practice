@@ -14,4 +14,5 @@ public:
 	void init(WObjects*);
 	void render();
 	void idle();
+	void update();
 };

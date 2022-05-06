@@ -9,5 +9,5 @@ private:
 
 public:
 	void update();
-	float getDeltaTime();
+	static float getDeltaTime();
 };

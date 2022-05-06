@@ -6,6 +6,10 @@
 #include "FaceMesh.h"
 #include "LineMesh.h"
 
+void WGraphic::update()
+{
+}
+
 void WGraphic::shaderInit()
 {
 	camera->location = vec3(-3.0f, -3.0f, 2.0f);

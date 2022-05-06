@@ -11,4 +11,5 @@ public:
 	~WObjects();
 
 	void init();
+	void update();
 };
