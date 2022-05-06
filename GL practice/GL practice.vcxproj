@@ -151,6 +151,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WGraphic.cpp" />
     <ClCompile Include="WObjects.cpp" />
+    <ClCompile Include="WTime.cpp" />
     <ClCompile Include="WWindow.cpp" />
     <ClCompile Include="Matrix2.cpp" />
     <ClCompile Include="Matrix3.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="WEngine.h" />
     <ClInclude Include="WGraphic.h" />
     <ClInclude Include="WObjects.h" />
+    <ClInclude Include="WTime.h" />
     <ClInclude Include="WWindow.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="pch.h" />

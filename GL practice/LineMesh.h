@@ -5,7 +5,7 @@ class LineMesh :
 	public Mesh
 {
 private:
-	GLuint VAO[42];
+	GLuint VAO[41 * 2];
 
 public:
 	LineMesh();

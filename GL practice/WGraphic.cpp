@@ -14,7 +14,7 @@ void WGraphic::shaderInit()
 
 	ShaderManager::getInstance()->addShader("default", "DefaultVertexShader.glsl", "DefaultFragmentShader.glsl");
 	ShaderManager::getInstance()->addShader("white", "DefaultVertexShader.glsl", "WhiteFragmentShader.glsl");
-	MeshManager::getInstance()->addMesh("face", new FaceMesh(20));
+	MeshManager::getInstance()->addMesh("face", new FaceMesh(40));
 	MeshManager::getInstance()->addMesh("line", new LineMesh());
 }
 

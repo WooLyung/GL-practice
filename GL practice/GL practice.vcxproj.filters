@@ -76,6 +76,9 @@
     <Filter Include="소스 파일\Example\Mesh\LineMesh">
       <UniqueIdentifier>{cbd4ea4e-bcfd-406b-917f-11322a9208c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\OpenGL\System\Time">
+      <UniqueIdentifier>{2b657933-bbcf-4a4e-8bae-c3a307d9bbe0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -132,6 +135,9 @@
     <ClCompile Include="LineMesh.cpp">
       <Filter>소스 파일\Example\Mesh\LineMesh</Filter>
     </ClCompile>
+    <ClCompile Include="WTime.cpp">
+      <Filter>소스 파일\OpenGL\System\Time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -178,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="LineMesh.h">
       <Filter>소스 파일\Example\Mesh\LineMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="WTime.h">
+      <Filter>소스 파일\OpenGL\System\Time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
