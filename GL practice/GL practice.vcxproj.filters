@@ -79,6 +79,9 @@
     <Filter Include="소스 파일\OpenGL\System\Time">
       <UniqueIdentifier>{2b657933-bbcf-4a4e-8bae-c3a307d9bbe0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\OpenGL\System\Input">
+      <UniqueIdentifier>{9256fad1-b805-45a6-8bbd-69c44ce0473a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -138,6 +141,9 @@
     <ClCompile Include="WTime.cpp">
       <Filter>소스 파일\OpenGL\System\Time</Filter>
     </ClCompile>
+    <ClCompile Include="WInput.cpp">
+      <Filter>소스 파일\OpenGL\System\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -187,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="WTime.h">
       <Filter>소스 파일\OpenGL\System\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="WInput.h">
+      <Filter>소스 파일\OpenGL\System\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@
 #include "WGraphic.h"
 #include "WObjects.h"
 #include "WTime.h"
+#include "WInput.h"
 
 class WEngine
 {
@@ -11,6 +12,7 @@ private:
 	WObjects* objects;
 	WGraphic* graphic;
 	WTime* time;
+	WInput* input;
 
 public:
 	~WEngine();

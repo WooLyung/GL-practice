@@ -150,6 +150,7 @@
     <ClCompile Include="WEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WGraphic.cpp" />
+    <ClCompile Include="WInput.cpp" />
     <ClCompile Include="WObjects.cpp" />
     <ClCompile Include="WTime.cpp" />
     <ClCompile Include="WWindow.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="FaceMesh.h" />
     <ClInclude Include="WEngine.h" />
     <ClInclude Include="WGraphic.h" />
+    <ClInclude Include="WInput.h" />
     <ClInclude Include="WObjects.h" />
     <ClInclude Include="WTime.h" />
     <ClInclude Include="WWindow.h" />

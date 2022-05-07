@@ -22,6 +22,7 @@ namespace callbacks
 void WEngine::idle()
 {
 	time->update();
+	input->update();
 	objects->update();
 	graphic->update();
 	graphic->idle();
@@ -35,6 +36,7 @@ void WEngine::init(int argc, char** argv)
 	objects = new WObjects();
 	graphic = new WGraphic();
 	time = new WTime();
+	input = new WInput();
 
 	window->init(argc, argv);
 	graphic->init(objects);
@@ -60,6 +62,7 @@ WEngine::~WEngine()
 	delete window;
 	delete graphic;
 	delete time;
+	delete input;
 	delete ShaderManager::getInstance();
 	delete MeshManager::getInstance();
 }
