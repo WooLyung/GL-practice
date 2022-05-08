@@ -2,6 +2,7 @@
 #include "ShaderManager.h"
 #include "MeshManager.h"
 #include "WTime.h"
+#include "WInput.h"
 
 void WObjects::init()
 {

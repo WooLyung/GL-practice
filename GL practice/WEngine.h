@@ -22,4 +22,6 @@ public:
 
 	void display();
 	void idle();
+	void keyboard(unsigned char, int, int);
+	void keyboardUp(unsigned char, int, int);
 };

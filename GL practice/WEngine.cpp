@@ -17,6 +17,18 @@ namespace callbacks
 		if (engine)
 			engine->idle();
 	}
+
+	void keyboard(unsigned char key, int x, int y)
+	{
+		if (engine)
+			engine->keyboard(key, x, y);
+	}
+
+	void keyboardUp(unsigned char key, int x, int y)
+	{
+		if (engine)
+			engine->keyboardUp(key, x, y);
+	}
 }
 
 void WEngine::idle()
@@ -44,6 +56,8 @@ void WEngine::init(int argc, char** argv)
 
 	glutDisplayFunc(callbacks::display);
 	glutIdleFunc(callbacks::idle);
+	glutKeyboardFunc(callbacks::keyboard);
+	glutKeyboardUpFunc(callbacks::keyboardUp);
 }
 
 void WEngine::display()
@@ -63,6 +77,17 @@ WEngine::~WEngine()
 	delete graphic;
 	delete time;
 	delete input;
+
 	delete ShaderManager::getInstance();
 	delete MeshManager::getInstance();
+}
+
+void WEngine::keyboard(unsigned char key, int x, int y)
+{
+	input->keyboard(key);
+}
+
+void WEngine::keyboardUp(unsigned char key, int x, int y)
+{
+	input->keyboardUp(key);
 }
