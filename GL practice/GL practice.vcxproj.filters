@@ -85,6 +85,9 @@
     <Filter Include="소스 파일\Example\Mesh\ShadowMesh">
       <UniqueIdentifier>{5669da1d-ec38-4392-b5b6-73b1721a4957}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Example\Mesh\GroundMesh">
+      <UniqueIdentifier>{fc48deb0-415f-4d83-a57f-b61f89c8cb74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -150,6 +153,9 @@
     <ClCompile Include="ShadowMesh.cpp">
       <Filter>소스 파일\Example\Mesh\ShadowMesh</Filter>
     </ClCompile>
+    <ClCompile Include="GroundMesh.cpp">
+      <Filter>소스 파일\Example\Mesh\GroundMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -206,6 +212,9 @@
     <ClInclude Include="ShadowMesh.h">
       <Filter>소스 파일\Example\Mesh\ShadowMesh</Filter>
     </ClInclude>
+    <ClInclude Include="GroundMesh.h">
+      <Filter>소스 파일\Example\Mesh\GroundMesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GL practice.rc">
@@ -226,6 +235,9 @@
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
     <None Include="ShadowVertexShader.glsl">
+      <Filter>소스 파일\Example\Shader</Filter>
+    </None>
+    <None Include="GreenFragmentShader.glsl">
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
   </ItemGroup>

@@ -6,6 +6,7 @@
 #include "FaceMesh.h"
 #include "ShadowMesh.h"
 #include "LineMesh.h"
+#include "GroundMesh.h"
 
 void WGraphic::update()
 {
@@ -13,17 +14,19 @@ void WGraphic::update()
 
 void WGraphic::shaderInit()
 {
-	camera->location = vec3(0.0f, 8.0f, -3.0f);
-	camera->rotation = vec3(-1.57f, 0.0f, 0.0f);
+	camera->location = vec3(0.0f, -2.5f, -12.0f);
+	camera->rotation = vec3(0.0f, 0.0f, 0.0f);
 	camera->scale = vec3(1.0f, 1.0f, 1.0f);
 
 	ShaderManager::getInstance()->addShader("default", "DefaultVertexShader.glsl", "DefaultFragmentShader.glsl");
 	ShaderManager::getInstance()->addShader("white", "DefaultVertexShader.glsl", "WhiteFragmentShader.glsl");
 	ShaderManager::getInstance()->addShader("shadow", "ShadowVertexShader.glsl", "BlackFragmentShader.glsl");
+	ShaderManager::getInstance()->addShader("green", "DefaultVertexShader.glsl", "GreenFragmentShader.glsl");
 
 	MeshManager::getInstance()->addMesh("shadow", new ShadowMesh(40));
 	MeshManager::getInstance()->addMesh("face", new FaceMesh(40));
 	MeshManager::getInstance()->addMesh("line", new LineMesh());
+	MeshManager::getInstance()->addMesh("ground", new GroundMesh());
 }
 
 void WGraphic::init(WObjects* objects)

@@ -9,9 +9,9 @@ uniform mat4 p;
 void main()
 {
     vec4 pos = m * aPos;
-    pos = vec4(pos.x,
-            0.2f,
-            pos.z,
+    pos = vec4((pos.x - light.x) * light.y / (light.y - pos.y) + light.x,
+            0.0f,
+            (pos.z - light.z) * light.y / (light.y - pos.y) + light.z,
             pos.w);
-	gl_Position = p * pos;
+	gl_Position = p * c * pos;
 }

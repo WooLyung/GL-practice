@@ -10,22 +10,29 @@ void WObjects::init()
 	obj2->shader = ShaderManager::getInstance()->getShader("white");
 	obj2->mesh = MeshManager::getInstance()->getMesh("line");
 	obj2->scale = vec3(0.2f, 0.2f, 0.2f);
-	obj2->location = vec3(0.0f, 0.0f, 4.0f);
+	obj2->location = vec3(0.0f, 7.0f, 0.0f);
 	objects.push_back(obj2);
 
 	Object* obj = new Object();
 	obj->shader = ShaderManager::getInstance()->getShader("default");
 	obj->mesh = MeshManager::getInstance()->getMesh("face");
 	obj->scale = vec3(0.2f, 0.2f, 0.2f);
-	obj->location = vec3(0.0f, 0.0f, 4.0f);
+	obj->location = vec3(0.0f, 7.0f, 0.0f);
 	objects.push_back(obj);
 
 	Object* obj3 = new Object();
 	obj3->shader = ShaderManager::getInstance()->getShader("shadow");
 	obj3->mesh = MeshManager::getInstance()->getMesh("shadow");
 	obj3->scale = vec3(0.2f, 0.2f, 0.2f);
-	obj3->location = vec3(0.0f, 0.0f, 4.0f);
+	obj3->location = vec3(0.0f, 7.0f, 0.0f);
 	objects.push_back(obj3);
+
+	Object* obj4 = new Object();
+	obj4->shader = ShaderManager::getInstance()->getShader("green");
+	obj4->mesh = MeshManager::getInstance()->getMesh("ground");
+	obj4->scale = vec3(8.0f, 8.0f, 8.0f);
+	obj4->location.y = -0.1f;
+	objects.push_back(obj4);
 }
 
 void WObjects::update()

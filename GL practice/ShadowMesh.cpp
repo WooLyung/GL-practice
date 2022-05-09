@@ -1,8 +1,9 @@
 #include "ShadowMesh.h"
 #include "ShaderManager.h"
 #include "Shader.h"
+#include "WTime.h"
 
-vec3 light(2.0f, 2.0f, 2.0f);
+vec3 light(0.0f, 20.0f, 0.0f);
 
 static float f(float z, float x)
 {
@@ -79,6 +80,11 @@ size_t ShadowMesh::getVAOcount()
 
 void ShadowMesh::render(Vector3 loc, Vector3 rot, Vector3 scale)
 {
+	static float time = 0.0f;
+	time += WTime::getDeltaTime();
+	light.x = cos(time) * 5;
+	light.z = sin(time) * 5;
+
 	float light_buffer[3] = { light.x, light.y, light.z };
 	glUniform3fv(light_param, 1, light_buffer);
 

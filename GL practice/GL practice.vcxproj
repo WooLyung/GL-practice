@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="GroundMesh.cpp" />
     <ClCompile Include="LineMesh.cpp" />
     <ClCompile Include="MeshManager.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="GroundMesh.h" />
     <ClInclude Include="LineMesh.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshManager.h" />
@@ -189,6 +191,7 @@
     <None Include="BlackFragmentShader.glsl" />
     <None Include="DefaultFragmentShader.glsl" />
     <None Include="DefaultVertexShader.glsl" />
+    <None Include="GreenFragmentShader.glsl" />
     <None Include="ShadowVertexShader.glsl" />
     <None Include="WhiteFragmentShader.glsl" />
   </ItemGroup>
