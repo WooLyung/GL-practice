@@ -1,14 +1,16 @@
 #pragma once
 #include "Mesh.h"
 
-class LineMesh :
+class ShadowMesh :
 	public Mesh
 {
 private:
-	GLuint VAO[41 * 2];
+	int n;
+	GLuint VAO;
+	GLuint light_param;
 
 public:
-	LineMesh();
+	ShadowMesh(int);
 
 	size_t getVAOcount();
 	GLuint* getVAOs();

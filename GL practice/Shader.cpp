@@ -66,13 +66,19 @@ Shader::Shader(string vertex, string fragment)
 		std::cout << "Program Link Error:\n" << infoLog << std::endl;
 	}
 
-	ctm_param = glGetUniformLocation(program, "mv");
+	c_param = glGetUniformLocation(program, "c");
+	m_param = glGetUniformLocation(program, "m");
 	pro_param = glGetUniformLocation(program, "p");
 }
 
-GLuint Shader::getCTMparam()
+GLuint Shader::getCparam()
 {
-	return ctm_param;
+	return c_param;
+}
+
+GLuint Shader::getMparam()
+{
+	return m_param;
 }
 
 GLuint Shader::getPROparam()

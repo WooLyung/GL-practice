@@ -1,12 +1,19 @@
-#include "FaceMesh.h"
+#include "ShadowMesh.h"
+#include "ShaderManager.h"
+#include "Shader.h"
 
-float f(float z, float x)
+vec3 light(2.0f, 2.0f, 2.0f);
+
+static float f(float z, float x)
 {
 	return x / (z * z + 1);
 }
 
-FaceMesh::FaceMesh(int n)
+ShadowMesh::ShadowMesh(int n)
 {
+	Shader* shader = ShaderManager::getInstance()->getShader("shadow");
+	light_param = glGetUniformLocation(shader->getProgram(), "light");
+
 	this->n = n;
 
 	GLfloat* pos_buffer_data = new GLfloat[n * n * 6 * 4];
@@ -60,18 +67,21 @@ FaceMesh::FaceMesh(int n)
 	delete[] pos_buffer_data;
 }
 
-GLuint* FaceMesh::getVAOs()
+GLuint* ShadowMesh::getVAOs()
 {
 	return &VAO;
 }
 
-size_t FaceMesh::getVAOcount()
+size_t ShadowMesh::getVAOcount()
 {
 	return 1;
 }
 
-void FaceMesh::render(Vector3 loc, Vector3 rot, Vector3 scale)
+void ShadowMesh::render(Vector3 loc, Vector3 rot, Vector3 scale)
 {
+	float light_buffer[3] = { light.x, light.y, light.z };
+	glUniform3fv(light_param, 1, light_buffer);
+
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, n * n * 6 * 4);
 }

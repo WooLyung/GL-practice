@@ -13,5 +13,5 @@ public:
 
 	size_t getVAOcount();
 	GLuint* getVAOs();
-	void render();
+	void render(Vector3, Vector3, Vector3);
 };

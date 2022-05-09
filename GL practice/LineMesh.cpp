@@ -63,7 +63,7 @@ size_t LineMesh::getVAOcount()
 	return 41 * 2;
 }
 
-void LineMesh::render()
+void LineMesh::render(Vector3 loc, Vector3 rot, Vector3 scale)
 {
 	for (int i = 0; i < 41 * 2; i++)
 	{

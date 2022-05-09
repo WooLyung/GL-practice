@@ -9,5 +9,5 @@ private:
 public:
 	virtual size_t getVAOcount() = 0;
 	virtual GLuint* getVAOs() = 0;
-	virtual void render() = 0;
+	virtual void render(Vector3, Vector3, Vector3) = 0;
 };

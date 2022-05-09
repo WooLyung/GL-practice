@@ -82,6 +82,9 @@
     <Filter Include="소스 파일\OpenGL\System\Input">
       <UniqueIdentifier>{9256fad1-b805-45a6-8bbd-69c44ce0473a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Example\Mesh\ShadowMesh">
+      <UniqueIdentifier>{5669da1d-ec38-4392-b5b6-73b1721a4957}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -144,6 +147,9 @@
     <ClCompile Include="WInput.cpp">
       <Filter>소스 파일\OpenGL\System\Input</Filter>
     </ClCompile>
+    <ClCompile Include="ShadowMesh.cpp">
+      <Filter>소스 파일\Example\Mesh\ShadowMesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -197,6 +203,9 @@
     <ClInclude Include="WInput.h">
       <Filter>소스 파일\OpenGL\System\Input</Filter>
     </ClInclude>
+    <ClInclude Include="ShadowMesh.h">
+      <Filter>소스 파일\Example\Mesh\ShadowMesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GL practice.rc">
@@ -211,6 +220,12 @@
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
     <None Include="WhiteFragmentShader.glsl">
+      <Filter>소스 파일\Example\Shader</Filter>
+    </None>
+    <None Include="BlackFragmentShader.glsl">
+      <Filter>소스 파일\Example\Shader</Filter>
+    </None>
+    <None Include="ShadowVertexShader.glsl">
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
   </ItemGroup>

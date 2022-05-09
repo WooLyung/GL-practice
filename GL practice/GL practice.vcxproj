@@ -147,6 +147,7 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="FaceMesh.cpp" />
+    <ClCompile Include="ShadowMesh.cpp" />
     <ClCompile Include="WEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WGraphic.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="FaceMesh.h" />
+    <ClInclude Include="ShadowMesh.h" />
     <ClInclude Include="WEngine.h" />
     <ClInclude Include="WGraphic.h" />
     <ClInclude Include="WInput.h" />
@@ -184,8 +186,10 @@
     <ResourceCompile Include="GL practice.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BlackFragmentShader.glsl" />
     <None Include="DefaultFragmentShader.glsl" />
     <None Include="DefaultVertexShader.glsl" />
+    <None Include="ShadowVertexShader.glsl" />
     <None Include="WhiteFragmentShader.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
