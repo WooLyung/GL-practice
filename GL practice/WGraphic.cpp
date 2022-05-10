@@ -3,10 +3,7 @@
 #include "Object.h"
 #include "ShaderManager.h"
 #include "MeshManager.h"
-#include "FaceMesh.h"
-#include "ShadowMesh.h"
-#include "LineMesh.h"
-#include "GroundMesh.h"
+#include "SphereMesh.h"
 
 void WGraphic::update()
 {
@@ -14,19 +11,12 @@ void WGraphic::update()
 
 void WGraphic::shaderInit()
 {
-	camera->location = vec3(0.0f, -2.5f, -12.0f);
+	camera->location = vec3(0.0f, 0.0f, -3.0f);
 	camera->rotation = vec3(0.0f, 0.0f, 0.0f);
-	camera->scale = vec3(1.0f, 1.0f, 1.0f);
+	camera->scale = vec3(0.5f, 0.5f, 1.0f);
 
 	ShaderManager::getInstance()->addShader("default", "DefaultVertexShader.glsl", "DefaultFragmentShader.glsl");
-	ShaderManager::getInstance()->addShader("white", "DefaultVertexShader.glsl", "WhiteFragmentShader.glsl");
-	ShaderManager::getInstance()->addShader("shadow", "ShadowVertexShader.glsl", "BlackFragmentShader.glsl");
-	ShaderManager::getInstance()->addShader("green", "DefaultVertexShader.glsl", "GreenFragmentShader.glsl");
-
-	MeshManager::getInstance()->addMesh("shadow", new ShadowMesh(40));
-	MeshManager::getInstance()->addMesh("face", new FaceMesh(40));
-	MeshManager::getInstance()->addMesh("line", new LineMesh());
-	MeshManager::getInstance()->addMesh("ground", new GroundMesh());
+	MeshManager::getInstance()->addMesh("sphere", new SphereMesh());
 }
 
 void WGraphic::init(WObjects* objects)
@@ -44,7 +34,7 @@ void WGraphic::init(WObjects* objects)
 void WGraphic::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 	for (Object* obj : objects->objects)
 	{

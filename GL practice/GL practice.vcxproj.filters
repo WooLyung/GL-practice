@@ -64,17 +64,11 @@
     <Filter Include="소스 파일\Example\Mesh">
       <UniqueIdentifier>{7525e682-9506-4d6e-aec8-afce65ee7b1f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Example\Mesh\TestMesh">
-      <UniqueIdentifier>{306caacc-7f34-4ed8-b559-7b72c3cf0187}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\OpenGL\Component\Mesh\Manager">
       <UniqueIdentifier>{f134a23b-7b65-4fde-81b1-6907ca89a905}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\OpenGL\Component\Camera">
       <UniqueIdentifier>{bb5713b4-ed93-42f0-bf9d-5614942f308c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Example\Mesh\LineMesh">
-      <UniqueIdentifier>{cbd4ea4e-bcfd-406b-917f-11322a9208c5}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\OpenGL\System\Time">
       <UniqueIdentifier>{2b657933-bbcf-4a4e-8bae-c3a307d9bbe0}</UniqueIdentifier>
@@ -82,10 +76,7 @@
     <Filter Include="소스 파일\OpenGL\System\Input">
       <UniqueIdentifier>{9256fad1-b805-45a6-8bbd-69c44ce0473a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Example\Mesh\ShadowMesh">
-      <UniqueIdentifier>{5669da1d-ec38-4392-b5b6-73b1721a4957}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Example\Mesh\GroundMesh">
+    <Filter Include="소스 파일\Example\Mesh\SphereMesh">
       <UniqueIdentifier>{fc48deb0-415f-4d83-a57f-b61f89c8cb74}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -132,17 +123,11 @@
     <ClCompile Include="ShaderManager.cpp">
       <Filter>소스 파일\OpenGL\Component\Shader\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="FaceMesh.cpp">
-      <Filter>소스 파일\Example\Mesh\TestMesh</Filter>
-    </ClCompile>
     <ClCompile Include="MeshManager.cpp">
       <Filter>소스 파일\OpenGL\Component\Mesh\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>소스 파일\OpenGL\Component\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="LineMesh.cpp">
-      <Filter>소스 파일\Example\Mesh\LineMesh</Filter>
     </ClCompile>
     <ClCompile Include="WTime.cpp">
       <Filter>소스 파일\OpenGL\System\Time</Filter>
@@ -150,11 +135,8 @@
     <ClCompile Include="WInput.cpp">
       <Filter>소스 파일\OpenGL\System\Input</Filter>
     </ClCompile>
-    <ClCompile Include="ShadowMesh.cpp">
-      <Filter>소스 파일\Example\Mesh\ShadowMesh</Filter>
-    </ClCompile>
-    <ClCompile Include="GroundMesh.cpp">
-      <Filter>소스 파일\Example\Mesh\GroundMesh</Filter>
+    <ClCompile Include="SphereMesh.cpp">
+      <Filter>소스 파일\Example\Mesh\SphereMesh</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -191,17 +173,11 @@
     <ClInclude Include="ShaderManager.h">
       <Filter>소스 파일\OpenGL\Component\Shader\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="FaceMesh.h">
-      <Filter>소스 파일\Example\Mesh\TestMesh</Filter>
-    </ClInclude>
     <ClInclude Include="MeshManager.h">
       <Filter>소스 파일\OpenGL\Component\Mesh\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>소스 파일\OpenGL\Component\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="LineMesh.h">
-      <Filter>소스 파일\Example\Mesh\LineMesh</Filter>
     </ClInclude>
     <ClInclude Include="WTime.h">
       <Filter>소스 파일\OpenGL\System\Time</Filter>
@@ -209,11 +185,8 @@
     <ClInclude Include="WInput.h">
       <Filter>소스 파일\OpenGL\System\Input</Filter>
     </ClInclude>
-    <ClInclude Include="ShadowMesh.h">
-      <Filter>소스 파일\Example\Mesh\ShadowMesh</Filter>
-    </ClInclude>
-    <ClInclude Include="GroundMesh.h">
-      <Filter>소스 파일\Example\Mesh\GroundMesh</Filter>
+    <ClInclude Include="SphereMesh.h">
+      <Filter>소스 파일\Example\Mesh\SphereMesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -226,18 +199,6 @@
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
     <None Include="DefaultFragmentShader.glsl">
-      <Filter>소스 파일\Example\Shader</Filter>
-    </None>
-    <None Include="WhiteFragmentShader.glsl">
-      <Filter>소스 파일\Example\Shader</Filter>
-    </None>
-    <None Include="BlackFragmentShader.glsl">
-      <Filter>소스 파일\Example\Shader</Filter>
-    </None>
-    <None Include="ShadowVertexShader.glsl">
-      <Filter>소스 파일\Example\Shader</Filter>
-    </None>
-    <None Include="GreenFragmentShader.glsl">
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
   </ItemGroup>
