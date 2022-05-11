@@ -18,14 +18,14 @@ SphereMesh::SphereMesh()
 		pos_buffer_data[2] = 0.0f;
 		pos_buffer_data[3] = 1.0f;
 
-		float y = cos(PI / n);
-		float r = sin(PI / n);
+		float y = cosf(PI / n);
+		float r = sinf(PI / n);
 		for (int i = 0; i < 2 * n + 1; i++)
 		{
 			float angle = PI / n * i;
-			pos_buffer_data[i * 4 + 4] = cos(angle) * r;
+			pos_buffer_data[i * 4 + 4] = cosf(angle) * r;
 			pos_buffer_data[i * 4 + 5] = y;
-			pos_buffer_data[i * 4 + 6] = sin(angle) * r;
+			pos_buffer_data[i * 4 + 6] = sinf(angle) * r;
 			pos_buffer_data[i * 4 + 7] = 1.0f;
 		}
 
@@ -58,14 +58,14 @@ SphereMesh::SphereMesh()
 		pos_buffer_data[2] = 0.0f;
 		pos_buffer_data[3] = 1.0f;
 
-		float y = -cos(PI / n);
-		float r = sin(PI / n);
+		float y = -cosf(PI / n);
+		float r = sinf(PI / n);
 		for (int i = 0; i < 2 * n + 1; i++)
 		{
 			float angle = PI / n * i;
-			pos_buffer_data[i * 4 + 4] = cos(angle) * r;
+			pos_buffer_data[i * 4 + 4] = cosf(angle) * r;
 			pos_buffer_data[i * 4 + 5] = y;
-			pos_buffer_data[i * 4 + 6] = sin(angle) * r;
+			pos_buffer_data[i * 4 + 6] = sinf(angle) * r;
 			pos_buffer_data[i * 4 + 7] = 1.0f;
 		}
 
@@ -94,24 +94,24 @@ SphereMesh::SphereMesh()
 			GLfloat* pos_buffer_data = new GLfloat[n * 16 + 8];
 			glBindVertexArray(VAO[m]);
 
-			float y = cos(PI / n * m);
-			float y2 = cos(PI / n * (m + 1));
+			float y = cosf(PI / n * m);
+			float y2 = cosf(PI / n * (m + 1));
 
-			float r = sin(PI / n * m);
-			float r2 = sin(PI / n * (m + 1));
+			float r = sinf(PI / n * m);
+			float r2 = sinf(PI / n * (m + 1));
 
 			for (int i = 0; i < 2 * n + 1; i++)
 			{
 				float angle = PI / n * i;
 
-				pos_buffer_data[i * 8 + 0] = cos(angle) * r;
+				pos_buffer_data[i * 8 + 0] = cosf(angle) * r;
 				pos_buffer_data[i * 8 + 1] = y;
-				pos_buffer_data[i * 8 + 2] = sin(angle) * r;
+				pos_buffer_data[i * 8 + 2] = sinf(angle) * r;
 				pos_buffer_data[i * 8 + 3] = 1.0f;
 
-				pos_buffer_data[i * 8 + 4] = cos(angle) * r2;
+				pos_buffer_data[i * 8 + 4] = cosf(angle) * r2;
 				pos_buffer_data[i * 8 + 5] = y2;
-				pos_buffer_data[i * 8 + 6] = sin(angle) * r2;
+				pos_buffer_data[i * 8 + 6] = sinf(angle) * r2;
 				pos_buffer_data[i * 8 + 7] = 1.0f;
 			}
 
@@ -148,6 +148,7 @@ GLuint* SphereMesh::getVAOs()
 void SphereMesh::render(Vector3 loc, Vector3 rot, Vector3 scale)
 {
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glCullFace(GL_BACK);
 
 	glBindVertexArray(VAO[0]);
 	glDrawArrays(GL_TRIANGLE_FAN, 0, 2 * n + 2);

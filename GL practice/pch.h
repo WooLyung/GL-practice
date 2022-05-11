@@ -11,6 +11,6 @@
 #include "Matrix.h"
 #include "Vector.h"
 
-#define PI 3.141592
+#define PI 3.141592f
 
 using namespace std;
