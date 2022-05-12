@@ -7,8 +7,9 @@
 void WObjects::init()
 {
 	Object* sphere = new Object();
-	sphere->shader = ShaderManager::getInstance()->getShader("default");
-	sphere->mesh = MeshManager::getInstance()->getMesh("sphere");
+	sphere->shader = ShaderManager::getInstance()->getShader("white");
+	sphere->mesh = MeshManager::getInstance()->getMesh("utah");
+	sphere->scale = vec3(0.3f, 0.3f, 0.3f);
 	objects.push_back(sphere);
 }
 

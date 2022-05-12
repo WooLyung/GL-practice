@@ -4,6 +4,7 @@
 #include "ShaderManager.h"
 #include "MeshManager.h"
 #include "SphereMesh.h"
+#include "UtahTeapot.h"
 
 void WGraphic::update()
 {
@@ -16,7 +17,9 @@ void WGraphic::shaderInit()
 	camera->scale = vec3(0.5f, 0.5f, 1.0f);
 
 	ShaderManager::getInstance()->addShader("default", "DefaultVertexShader.glsl", "DefaultFragmentShader.glsl");
+	ShaderManager::getInstance()->addShader("white", "WhiteVertexShader.glsl", "DefaultFragmentShader.glsl");
 	MeshManager::getInstance()->addMesh("sphere", new SphereMesh());
+	MeshManager::getInstance()->addMesh("utah", new UtahTeapot());
 }
 
 void WGraphic::init(WObjects* objects)
