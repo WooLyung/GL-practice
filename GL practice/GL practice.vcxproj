@@ -146,7 +146,6 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
-    <ClCompile Include="UtahTeapot.cpp" />
     <ClCompile Include="WEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WGraphic.cpp" />
@@ -169,7 +168,6 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderManager.h" />
-    <ClInclude Include="UtahTeapot.h" />
     <ClInclude Include="WEngine.h" />
     <ClInclude Include="WGraphic.h" />
     <ClInclude Include="WInput.h" />
@@ -186,10 +184,6 @@
   <ItemGroup>
     <None Include="DefaultFragmentShader.glsl" />
     <None Include="DefaultVertexShader.glsl" />
-    <None Include="WhiteVertexShader.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="utah.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -79,9 +79,6 @@
     <Filter Include="소스 파일\Example\Mesh\SphereMesh">
       <UniqueIdentifier>{fc48deb0-415f-4d83-a57f-b61f89c8cb74}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Example\Mesh\UtahTeapot">
-      <UniqueIdentifier>{2bff0188-6c37-450b-b3a5-7e2e4cef70cf}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -141,9 +138,6 @@
     <ClCompile Include="SphereMesh.cpp">
       <Filter>소스 파일\Example\Mesh\SphereMesh</Filter>
     </ClCompile>
-    <ClCompile Include="UtahTeapot.cpp">
-      <Filter>소스 파일\Example\Mesh\UtahTeapot</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -194,9 +188,6 @@
     <ClInclude Include="SphereMesh.h">
       <Filter>소스 파일\Example\Mesh\SphereMesh</Filter>
     </ClInclude>
-    <ClInclude Include="UtahTeapot.h">
-      <Filter>소스 파일\Example\Mesh\UtahTeapot</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GL practice.rc">
@@ -210,13 +201,5 @@
     <None Include="DefaultFragmentShader.glsl">
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
-    <None Include="WhiteVertexShader.glsl">
-      <Filter>소스 파일\Example\Shader</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="utah.txt">
-      <Filter>소스 파일\Example\Mesh\UtahTeapot</Filter>
-    </Text>
   </ItemGroup>
 </Project>
