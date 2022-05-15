@@ -30,6 +30,8 @@ public:
 
 	// 단항
 	Vector2 operator-() const;
+	Vector2 normallized() const;
+	float norm() const;
 } vec2;
 
 typedef class Vector3
@@ -67,6 +69,8 @@ public:
 
 	// 단항
 	Vector3 operator-() const;
+	Vector3 normallized() const;
+	float norm() const;
 } vec3;
 
 typedef class Vector4
@@ -101,6 +105,8 @@ public:
 
 	// 단항
 	Vector4 operator-() const;
+	Vector4 normallized() const;
+	float norm() const;
 } vec4;
 
 typedef Vector2 point2;

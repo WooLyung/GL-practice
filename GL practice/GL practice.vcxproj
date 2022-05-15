@@ -146,6 +146,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="SphereMesh2.cpp" />
     <ClCompile Include="WEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WGraphic.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="SphereMesh2.h" />
     <ClInclude Include="WEngine.h" />
     <ClInclude Include="WGraphic.h" />
     <ClInclude Include="WInput.h" />

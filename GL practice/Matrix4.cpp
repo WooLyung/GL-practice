@@ -252,8 +252,8 @@ Matrix4 Matrix4::Translate(float x, float y, float z)
 
 Matrix4 Matrix4::RotateX(float angle)
 {
-	float c = cos(angle);
-	float s = sin(angle);
+	float c = cosf(angle);
+	float s = sinf(angle);
 	return Matrix4(
 		1, 0, 0, 0,
 		0, c, -s, 0,
@@ -264,8 +264,8 @@ Matrix4 Matrix4::RotateX(float angle)
 
 Matrix4 Matrix4::RotateY(float angle)
 {
-	float c = cos(angle);
-	float s = sin(angle);
+	float c = cosf(angle);
+	float s = sinf(angle);
 	return Matrix4(
 		c, 0, s, 0,
 		0, 1, 0, 0,
@@ -276,8 +276,8 @@ Matrix4 Matrix4::RotateY(float angle)
 
 Matrix4 Matrix4::RotateZ(float angle)
 {
-	float c = cos(angle);
-	float s = sin(angle);
+	float c = cosf(angle);
+	float s = sinf(angle);
 	return Matrix4(
 		c, -s, 0, 0,
 		s, c, 0, 0,

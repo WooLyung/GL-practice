@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Vector.h"
 
 const Vector3 Vector3::one = Vector3(1.0f, 1.0f, 1.0f);
@@ -88,4 +89,14 @@ Vector3 Vector3::operator%=(const Vector3& v)
 Vector3 Vector3::operator-() const
 {
 	return Vector3(-x, -y, -z);
+}
+
+Vector3 Vector3::normallized() const
+{
+	return *this / norm();
+}
+
+float Vector3::norm() const
+{
+	return sqrt(x * x + y * y + z * z);
 }

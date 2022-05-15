@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Vector.h"
 
 const Vector2 Vector2::one = Vector2(1.0f, 1.0f);
@@ -75,4 +76,14 @@ Vector2 Vector2::operator/=(const float& i)
 Vector2 Vector2::operator-() const
 {
 	return Vector2(-x, -y);
+}
+
+Vector2 Vector2::normallized() const
+{
+	return *this / norm();
+}
+
+float Vector2::norm() const
+{
+	return sqrt(x * x + y * y);
 }

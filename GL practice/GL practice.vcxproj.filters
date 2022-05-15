@@ -79,6 +79,9 @@
     <Filter Include="소스 파일\Example\Mesh\SphereMesh">
       <UniqueIdentifier>{fc48deb0-415f-4d83-a57f-b61f89c8cb74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Example\Mesh\SphereMesh2">
+      <UniqueIdentifier>{57b49cd9-815d-42e4-ae03-205045245596}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -138,6 +141,9 @@
     <ClCompile Include="SphereMesh.cpp">
       <Filter>소스 파일\Example\Mesh\SphereMesh</Filter>
     </ClCompile>
+    <ClCompile Include="SphereMesh2.cpp">
+      <Filter>소스 파일\Example\Mesh\SphereMesh2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -187,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="SphereMesh.h">
       <Filter>소스 파일\Example\Mesh\SphereMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereMesh2.h">
+      <Filter>소스 파일\Example\Mesh\SphereMesh2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
