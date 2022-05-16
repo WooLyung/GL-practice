@@ -10,6 +10,10 @@ void WObjects::init()
 	sphere->shader = ShaderManager::getInstance()->getShader("default");
 	sphere->mesh = MeshManager::getInstance()->getMesh("sphere");
 	objects.push_back(sphere);
+
+	lights.push_back(new Light());
+	lights[0]->position.y = 4.0f;
+	lights[0]->light_ambient = vec3(0.5f, 0.5f, 0.5f);
 }
 
 void WObjects::update()
@@ -23,4 +27,7 @@ WObjects::~WObjects()
 {
 	for (Object* obj : objects)
 		delete obj;
+
+	for (Light* light : lights)
+		delete light;
 }

@@ -4,6 +4,7 @@
 #include "ShaderManager.h"
 #include "MeshManager.h"
 #include "SphereMesh2.h"
+#include "SphereMesh.h"
 
 void WGraphic::update()
 {

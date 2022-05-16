@@ -1,7 +1,7 @@
 #include <vector>
 #include "SphereMesh2.h"
 
-static int depth = 5;
+static int depth = 4;
 
 static void divide(point3 p1, point3 p2, point3 p3, vector<point3>& ps, int d = 0)
 {
@@ -26,13 +26,15 @@ static void divide(point3 p1, point3 p2, point3 p3, vector<point3>& ps, int d = 
 
 SphereMesh2::SphereMesh2()
 {
+	material.ambient = color4(1.0f, 1.0f, 1.0f, 1.0f);
+
 	vector<point3> ps;
 
 	point3 v[4] = { 
 		point3(0.0f, 0.0f, 1.0f), 
 		point3(0.0f, 0.942809f, -0.333333f),
 		point3(-0.816497f, -0.471405f, -0.333333f),
-		point3(0.816497f, -0.471405f, -0.33333f)
+		point3(0.816497f, -0.471405f, -0.333333f)
 	};
 
 	divide(v[2], v[1], v[0], ps);
@@ -87,8 +89,6 @@ GLuint* SphereMesh2::getVAOs()
 
 void SphereMesh2::render(Vector3 loc, Vector3 rot, Vector3 scale)
 {
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, vertexs);
 }

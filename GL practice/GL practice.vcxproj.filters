@@ -82,6 +82,12 @@
     <Filter Include="소스 파일\Example\Mesh\SphereMesh2">
       <UniqueIdentifier>{57b49cd9-815d-42e4-ae03-205045245596}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Light">
+      <UniqueIdentifier>{2d3b6bac-360b-4cb5-b685-677eb5786f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\OpenGL\Component\Light\Material">
+      <UniqueIdentifier>{d726faee-22e4-42c6-ab72-459701b074e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -144,6 +150,9 @@
     <ClCompile Include="SphereMesh2.cpp">
       <Filter>소스 파일\Example\Mesh\SphereMesh2</Filter>
     </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>소스 파일\OpenGL\Component\Light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WWindow.h">
@@ -197,6 +206,12 @@
     <ClInclude Include="SphereMesh2.h">
       <Filter>소스 파일\Example\Mesh\SphereMesh2</Filter>
     </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>소스 파일\OpenGL\Component\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>소스 파일\OpenGL\Component\Light\Material</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GL practice.rc">
@@ -208,6 +223,9 @@
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
     <None Include="DefaultFragmentShader.glsl">
+      <Filter>소스 파일\Example\Shader</Filter>
+    </None>
+    <None Include="LightFragmentShader.glsl">
       <Filter>소스 파일\Example\Shader</Filter>
     </None>
   </ItemGroup>

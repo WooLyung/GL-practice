@@ -1,10 +1,12 @@
 #pragma once
 #include "Mesh.h"
+#include "Material.h"
 
 class SphereMesh2 :
 	public Mesh
 {
 private:
+	Material material;
 	GLuint VAO;
 	int vertexs;
 
